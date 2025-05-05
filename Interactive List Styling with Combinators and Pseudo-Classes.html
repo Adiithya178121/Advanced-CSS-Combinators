@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive List</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    ol {
+      list-style-type: decimal;
+      margin-left: 20px;
+    }
+
+    li {
+      padding: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* First item in bold */
+    li:first-child {
+      font-weight: bold;
+    }
+
+    /* Adjacent sibling: only the second item (immediately after the first) */
+    li:first-child + li {
+      background-color: #e0f7fa;
+    }
+
+    /* General sibling: all items after the third */
+    li:nth-child(3) ~ li {
+      font-style: italic;
+    }
+
+    /* Hover effect on all items */
+    li:hover {
+      color: white;
+      background-color: #00796b;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Interactive Ordered List</h2>
+  <ol>
+    <li>Introduction</li>
+    <li>Installation</li>
+    <li>Configuration</li>
+    <li>Usage</li>
+    <li>Troubleshooting</li>
+  </ol>
+
+</body>
+</html>
