@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Complex Navigation Bar</title>
+  <style>
+    /* Base navbar styles */
+    nav {
+      background-color: #333;
+      padding: 1rem;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    /* Descendant combinator - style links in different sections */
+    .section.section-a a {
+      color: lightblue;
+    }
+
+    .section.section-b a {
+      color: lightgreen;
+    }
+
+    .section.section-c a {
+      color: lightcoral;
+    }
+
+    /* Child combinator - direct child links only (not nested inside <div>, for example) */
+    .section > a {
+      font-weight: bold;
+    }
+
+    /* Nested link (not a direct child) will not get bold font */
+    .section div a {
+      font-weight: normal;
+    }
+
+    /* Pseudo-classes for interactivity */
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav a:active {
+      color: yellow;
+    }
+
+    /* Attribute selector for links starting with https */
+    /* Increase specificity using tag + class + attribute to override other styles */
+    a.https-link[href^="https"] {
+      color: orange !important;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="section section-a">
+      <a href="http://example.com">Home</a>
+      <a href="https://secure.com" class="https-link">Secure Site</a>
+      <div>
+        <a href="http://example.com/about">About Us</a>
+      </div>
+    </div>
+
+    <div class="section section-b">
+      <a href="http://example.com/services">Services</a>
+      <a href="https://secure-services.com" class="https-link">Secure Services</a>
+      <div>
+        <a href="http://example.com/consulting">Consulting</a>
+      </div>
+    </div>
+
+    <div class="section section-c">
+      <a href="http://example.com/contact">Contact</a>
+      <a href="https://secure-contact.com" class="https-link">Secure Contact</a>
+      <div>
+        <a href="http://example.com/help">Help Center</a>
+      </div>
+    </div>
+  </nav>
+
+</body>
+</html>
